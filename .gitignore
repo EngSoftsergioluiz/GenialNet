@@ -1,0 +1,64 @@
+## .NET
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]istPublic/
+[D]ebug/
+[D]ebugPublic/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# User-specific files for Visual Studio for Mac
+.idea/
+
+# User-specific files for Rider
+.idea/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files from Visual Studio
+.vs2019/
+.vs2017/
+
+# Windows image file
+Thumbs.db
+ehthumbs.db
+
+# JetBrains Rider files
+.idea/
+
+# VS Code directories
+.vscode/
+
+# GitHub Copilot files
+/copilot/
+
+# Project files
+project.lock.json
+project.fragment.lock.json
+
+# .NET Core
+project.json
+artifacts/
+
+# ASP.NET
+/wwwroot/
+
+# Visual Studio for Mac
+.vscode/
+.idea/
+
+# VS for Mac
+.vscode/
+
+# NPM packages
+node_modules/
