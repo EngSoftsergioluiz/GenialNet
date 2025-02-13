@@ -16,19 +16,18 @@ namespace GenialNetBackend.Application.Produtos.Commands
     public class CreateProdutoCommandHandler : IRequestHandler<CreateProdutoCommand, int>
     {
         private readonly ApplicationDbContext _context;
-        private readonly ProdutoRepository _produtoRepository;
         private readonly IValidator<CreateProdutoCommand> _validator;
 
-        public CreateProdutoCommandHandler(ApplicationDbContext context, ProdutoRepository produtoRepository, IValidator<CreateProdutoCommand> validator)
+        public CreateProdutoCommandHandler(ApplicationDbContext context, IValidator<CreateProdutoCommand> validator)
         {
             _context = context;
-            _produtoRepository = produtoRepository;
             _validator = validator;
         }
 
         public async Task<int> Handle(CreateProdutoCommand request, CancellationToken cancellationToken)
         {
             var validationResult = await _validator.ValidateAsync(request, cancellationToken);
+
             if (!validationResult.IsValid)
             {
                 throw new ValidationException(validationResult.Errors);

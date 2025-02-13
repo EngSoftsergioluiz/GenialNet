@@ -34,5 +34,15 @@ namespace GenialNetBackend.Utils
 
             return cnpj.EndsWith(digito1.ToString() + digito2.ToString());
         }
+        public static string FormatarCNPJ(string cnpj)
+        {
+            if (string.IsNullOrWhiteSpace(cnpj)) return cnpj;
+
+            cnpj = Regex.Replace(cnpj, @"\D", "");
+
+            if (cnpj.Length != 14) return cnpj;
+
+            return Convert.ToUInt64(cnpj).ToString(@"00\.000\.000\/0000\-00");
+        }
     }
 }
